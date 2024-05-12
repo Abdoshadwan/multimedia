@@ -1,0 +1,13 @@
+<?php
+session_start();
+if (isset($_SESSION['user'])) {
+    if ($_SESSION['user']->role === "admin") {
+        echo 'hello' . $_SESSION['user']->username;
+    } else {
+        header("location:http://localhost/projects/Car_agency/index.php", true);
+        die("");
+    }
+} else {
+    header("location:http://localhost/projects/Car_agency/index.php", true);
+    die("");
+}

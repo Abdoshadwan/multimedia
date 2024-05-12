@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html  lang=en>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Car Agency Registration</title>
+    <link rel="stylesheet" type="text/css" href="register-style.css">
+</head>
+
+<body>
+    <div class="login">
+        <img src="imgs/1.png" alt="login image" class="login__img">
+
+        <form method="post" class="login__form">
+            <h1 class="login__title">Register</h1>
+
+            <div class="login__container">
+                <div class="login__box">
+                    <i class="ri-lock-password-line login__icon"></i>
+
+                    <div class="login__box-input">
+                        <input type="text" class="login__input" name="username" id="login-user" required placeholder="">
+                        <label for="login-user" class="login__label">Username   </label>
+                        <i class="ri-eye-off-line login__eye" id="login-eye"></i>
+                    </div>
+                </div>
+                <div class="login__box">
+                    <i class="ri-user-3-line login__icon"></i>
+
+                    <div class="login__box-input">
+                        <input type="email" class="login__input" name="email",id="log" placeholder="" required>
+                        <label for="log" class="login__label">Email   </label>
+                    </div>
+                </div>
+                <div class="login__box">
+                    <i class="ri-lock-password-line login__icon"></i>
+
+                    <div class="login__box-input">
+                        <input type="password" class="login__input" name="password" id="login-pass" required placeholder="">
+                        <label for="login-pass" class="login__label">Password  </label>
+                        <i class="ri-eye-off-line login__eye" id="login-eye"></i>
+                    </div>
+                </div>
+                <div class="login__box">
+                    <i class="ri-lock-password-line login__icon"></i>
+
+                    <div class="login__box-input">
+                        <input type="password",label="a" class="login__input" name="password" id="login-pass" required placeholder="">
+                        <label for="" class="login__label">Confirm Password  </label>
+                        <i class="ri-eye-off-line login__eye" id="login-eye"></i>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <input class="login__button" type="submit" value="Register" name="Register">
+
+            <p class="login__register">already have account ! <a href="index.html">Login</a></p>
+        </form>
+    </div>
+
+
+
+
+</body>
+
+</html>
+
+<!-- <?php
+$hostname = "localhost";
+$username = "root";
+$password = "";
+$database = new PDO("mysql:host=$hostname;dbname=car_agency;charset=utf8", $username, $password);
+if ($database == false) {
+    echo 'connection error';
+}
+if (isset($_POST['Register'])) {
+    $checkemail = $database->prepare("SELECT * FROM users WHERE email= :email");
+    $email = $_POST['email'];
+    $checkemail->bindParam("email", $email);
+    $checkemail->execute();
+
+    if ($checkemail->rowCount() > 0) {
+        echo '<div class="alert-danger" role="alert">
+        used before
+      </div>';
+    } else {
+        $name = $_POST['username'];
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+
+        $adduser = $database->prepare("INSERT INTO users(username,email,password,role) VALUES(:name,:email,:password,'user')");
+        $adduser->bindParam("name", $name);
+        $adduser->bindParam("email", $email);
+        $adduser->bindParam("password", $password);
+
+        if ($adduser->execute()) {
+            echo '<div class="alert-success" role="alert">
+            succeed
+               </div>';
+        } else {
+            echo '<div class="alert-danger" role="alert">
+            error
+          </div>';
+        }
+    }
+}
+?> -->
